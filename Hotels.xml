@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Hotels>
+  <Hotel id="H001">
+    <Name>Westin Tempe</Name>
+    <Phone>480-968-8885</Phone>
+    <Phone>800-937-8461</Phone>
+    <Address NearestAirport="Sky Harbor">
+      <Number>11</Number>
+      <Street>E. 7th St</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+    <Rating>4.2</Rating>
+  </Hotel>
+  <Hotel id="H002">
+    <Name>Marriott Phoenix</Name>
+    <Phone>602-555-1234</Phone>
+    <Address>
+      <Number>222</Number>
+      <Street>Central Ave</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85004</Zip>
+    </Address>
+    <Rating>4.5</Rating>
+  </Hotel>
+  <Hotel id="H003">
+    <Name>Hilton Scottsdale</Name>
+    <Phone>480-555-5678</Phone>
+    <Phone>480-555-8765</Phone>
+    <Address NearestAirport="Scottsdale Airport">
+      <Number>123</Number>
+      <Street>Desert Rd</Street>
+      <City>Scottsdale</City>
+      <State>AZ</State>
+      <Zip>85251</Zip>
+    </Address>
+    <!-- Rating omitted intentionally -->
+  </Hotel>
+  <Hotel id="H004">
+    <Name>Hyatt Regency</Name>
+    <Phone>480-555-0001</Phone>
+    <Address NearestAirport="Sky Harbor">
+      <Number>45</Number>
+      <Street>Airport Blvd</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+    <Rating>4.0</Rating>
+  </Hotel>
+  <Hotel id="H005">
+    <Name>Renaissance Downtown</Name>
+    <Phone>602-555-2222</Phone>
+    <Address>
+      <Number>300</Number>
+      <Street>Downtown St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85004</Zip>
+    </Address>
+    <Rating>4.3</Rating>
+  </Hotel>
+  <Hotel id="H006">
+    <Name>Embassy Suites</Name>
+    <Phone>480-555-3333</Phone>
+    <Phone>480-555-3334</Phone>
+    <Address NearestAirport="Sky Harbor">
+      <Number>500</Number>
+      <Street>Convention Center Dr</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+    <!-- Rating omitted intentionally -->
+  </Hotel>
+  <Hotel id="H007">
+    <Name>Doubletree by Hilton</Name>
+    <Phone>602-555-4444</Phone>
+    <Address>
+      <Number>777</Number>
+      <Street>Main St</Street>
+      <City>Phoenix</City>
+      <State>AZ</State>
+      <Zip>85004</Zip>
+    </Address>
+    <Rating>4.1</Rating>
+  </Hotel>
+  <Hotel id="H008">
+    <Name>Hotel Valley Ho</Name>
+    <Phone>480-555-8888</Phone>
+    <Address NearestAirport="Sky Harbor">
+      <Number>210</Number>
+      <Street>Paradise Dr</Street>
+      <City>Tempe</City>
+      <State>AZ</State>
+      <Zip>85281</Zip>
+    </Address>
+    <Rating>3.9</Rating>
+  </Hotel>
+  <Hotel id="H009">
+    <Name>Omni Scottsdale</Name>
+    <Phone>480-555-7777</Phone>
+    <Address>
+      <Number>89</Number>
+      <Street>Granite Pkwy</Street>
+      <City>Scottsdale</City>
+      <State>AZ</State>
+      <Zip>85251</Zip>
+    </Address>
+    <Rating>4.4</Rating>
+  </Hotel>
+  <Hotel id="H010">
+    <Name>JW Marriott Scottsdale</Name>
+    <Phone>480-555-6666</Phone>
+    <Address NearestAirport="Scottsdale Airport">
+      <Number>101</Number>
+      <Street>Sand Creek Rd</Street>
+      <City>Scottsdale</City>
+      <State>AZ</State>
+      <Zip>85254</Zip>
+    </Address>
+    <Rating>4.6</Rating>
+  </Hotel>
+</Hotels>
