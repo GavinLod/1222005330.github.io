@@ -17,9 +17,9 @@ namespace ConsoleApp1
     public class Program
     {
 
-        public static string xmlURL = "https://www.public.asu.edu/~1222005330/Hotels.xml";
-        public static string xmlErrorURL = "https://www.public.asu.edu/~1222005330/HotelsErrors.xml";
-        public static string xsdURL = "https://www.public.asu.edu/~1222005330/Hotels.xsd";
+        public static string xmlURL = "https://Glod.github.io/1222005330.github.io/Hotels.xml";
+        public static string xmlErrorURL = "https://Glod.github.io/1222005330.github.io/HotelsErrors.xml";
+        public static string xsdURL = "https://Glod.github.io/1222005330.github.io/Hotels.xsd";
 
         public static void Main(string[] args)
         {
