@@ -2,23 +2,22 @@
 <!-- Error #1: Root element should be <Hotels> but is <Hotel> -->
 <Hotel>
   <!-- Hotel 1: Duplicate Name elements (Error #5) -->
-  <Hotel id="H001">
-    <Name>Westin Tempe</Name>
+  <Hotel id="H001" Rating="4.2">
+    <Name>Westin</Name>
     <Name>Duplicate Westin</Name>
     <Phone>480-968-8885</Phone>
     <Phone>800-937-8461</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>11</Number>
-      <Street>E. 7th St</Street>
+      <Street>E.7th St</Street>
       <City>Tempe</City>
       <State>AZ</State>
       <Zip>85281</Zip>
     </Address>
-    <Rating>4.2</Rating>
   </Hotel>
 
   <!-- Hotel 2: Missing required attribute "id" (Error #2) -->
-  <Hotel>
+  <Hotel Rating="4.5">
     <Name>Marriott Phoenix</Name>
     <Phone>602-555-1234</Phone>
     <Address>
@@ -28,28 +27,26 @@
       <State>AZ</State>
       <Zip>85004</Zip>
     </Address>
-    <Rating>4.5</Rating>
   </Hotel>
 
   <!-- Hotel 3: Missing <Phone> element entirely (Error #3) -->
   <Hotel id="H003">
     <Name>Hilton Scottsdale</Name>
-    <!-- No Phone provided -->
-    <Address NearestAirport="Scottsdale Airport">
+    <!-- Phone missing -->
+    <Address NearstAirport="Scottsdale Airport">
       <Number>123</Number>
       <Street>Desert Rd</Street>
       <City>Scottsdale</City>
       <State>AZ</State>
       <Zip>85251</Zip>
     </Address>
-    <Rating>4.3</Rating>
   </Hotel>
 
   <!-- Hotel 4: Address element missing its closing tag (Error #4) -->
-  <Hotel id="H004">
+  <Hotel id="H004" Rating="4.0">
     <Name>Hyatt Regency</Name>
     <Phone>480-555-0001</Phone>
-    <Address NearestAirport="Sky Harbor">
+    <Address NearstAirport="Sky Harbor">
       <Number>45</Number>
       <Street>Airport Blvd</Street>
       <City>Tempe</City>
@@ -60,7 +57,7 @@
   </Hotel>
 
   <!-- Hotel 5: A correct hotel entry to complete the file (no error here) -->
-  <Hotel id="H005">
+  <Hotel id="H005" Rating="4.3">
     <Name>Renaissance Downtown</Name>
     <Phone>602-555-2222</Phone>
     <Address>
@@ -70,6 +67,5 @@
       <State>AZ</State>
       <Zip>85004</Zip>
     </Address>
-    <Rating>4.3</Rating>
   </Hotel>
 </Hotel>

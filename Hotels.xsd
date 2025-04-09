@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema 
-    xmlns:xs="http://www.w3.org/2001/XMLSchema"
-    elementFormDefault="qualified">
-
+  xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  elementFormDefault="qualified">
+  
   <!-- Root element -->
   <xs:element name="Hotels">
     <xs:complexType>
@@ -11,13 +11,13 @@
         <xs:element name="Hotel" maxOccurs="unbounded">
           <xs:complexType>
             <xs:sequence>
-              <!-- Name element (required, single occurrence) -->
+              <!-- Name element (required) -->
               <xs:element name="Name" type="xs:string"/>
-              
-              <!-- Phone element (required, multiple occurrences) -->
+
+              <!-- Phone element: at least one occurrence, multiple allowed -->
               <xs:element name="Phone" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
-              
-              <!-- Address element (required, single occurrence) -->
+
+              <!-- Address element with details -->
               <xs:element name="Address">
                 <xs:complexType>
                   <xs:sequence>
@@ -27,17 +27,15 @@
                     <xs:element name="State" type="xs:string"/>
                     <xs:element name="Zip" type="xs:string"/>
                   </xs:sequence>
-                  <!-- "NearestAirport" is an optional attribute -->
-                  <xs:attribute name="NearestAirport" type="xs:string" use="optional"/>
+                  <!-- Optional attribute for the nearest airport; spelled to match the doc snippet -->
+                  <xs:attribute name="NearstAirport" type="xs:string" use="optional"/>
                 </xs:complexType>
               </xs:element>
-
-              <!-- Rating element is optional, so minOccurs="0" -->
-              <xs:element name="Rating" type="xs:string" minOccurs="0"/>
             </xs:sequence>
-            
-            <!-- "id" is the required attribute for each Hotel element -->
+            <!-- Required attribute for Hotel -->
             <xs:attribute name="id" type="xs:string" use="required"/>
+            <!-- Optional attribute for Rating -->
+            <xs:attribute name="Rating" type="xs:string" use="optional"/>
           </xs:complexType>
         </xs:element>
       </xs:sequence>

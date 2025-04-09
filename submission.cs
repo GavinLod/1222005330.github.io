@@ -1,10 +1,11 @@
-using System;
+﻿using System;
 using System.Xml.Schema;
 using System.Xml;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using System.Collections.Generic;
+using System.Xml.Linq;
 
 /**
  * This template file is created for ASU CSE445 Distributed SW Dev Assignment 4.
@@ -17,9 +18,9 @@ namespace ConsoleApp1
     public class Program
     {
 
-        public static string xmlURL = "https://GavinLod.github.io/1222005330.github.io/Hotels.xml";
-        public static string xmlErrorURL = "https://Gavinlod.github.io/1222005330.github.io/HotelsErrors.xml";
-        public static string xsdURL = "https://Gavinlod.github.io/1222005330.github.io/Hotels.xsd";
+        public static string xmlURL = "https://GavinLod.github.io/Hotels.xml";
+        public static string xmlErrorURL = "https://GavinLod.github.io/HotelsErrors.xml";
+        public static string xsdURL = "https://GavinLod.github.io/Hotels.xsd";
 
         public static void Main(string[] args)
         {
@@ -33,7 +34,7 @@ namespace ConsoleApp1
             Console.WriteLine(result);
             Console.WriteLine();
 
-            result = Xml2Json(xmlURL);
+            result = Xml2Json("Hotels.xml");
             Console.WriteLine("Converted JSON:");
             Console.WriteLine(result);
         }
@@ -71,7 +72,7 @@ namespace ConsoleApp1
             //return the results.
             if (errors.Count == 0)
             {
-                return "No Error";
+                return "No errors are found.";
             }
             else
             {
@@ -91,8 +92,17 @@ namespace ConsoleApp1
                 XmlDocument doc = new XmlDocument();
                 doc.Load(xmlUrl);
 
+                // Remove the XML declaration if present.
+                if (doc.FirstChild != null && doc.FirstChild.NodeType == XmlNodeType.XmlDeclaration)
+                {
+                    doc.RemoveChild(doc.FirstChild);
+                }
+
+                // Remove any comment nodes.
+                RemoveComments(doc);
+
                 //serialize the XML document to JSON text.
-                jsonText = JsonConvert.SerializeXmlNode(doc, Formatting.Indented);
+                jsonText = JsonConvert.SerializeXmlNode(doc, Newtonsoft.Json.Formatting.Indented);
 
                 //parse the JSON into a JObject for modification.
                 JObject jObj = JObject.Parse(jsonText);
@@ -108,6 +118,23 @@ namespace ConsoleApp1
                 jsonText = "Error converting XML to JSON: " + ex.Message;
             }
             return jsonText;
+        }
+
+        //helper method to recursively remove comment nodes from an XmlNode.
+        private static void RemoveComments(XmlNode node)
+        {
+            for (int i = node.ChildNodes.Count - 1; i >= 0; i--)
+            {
+                XmlNode child = node.ChildNodes[i];
+                if (child.NodeType == XmlNodeType.Comment)
+                {
+                    node.RemoveChild(child);
+                }
+                else
+                {
+                    RemoveComments(child);
+                }
+            }
         }
 
         //helper method to recursively traverse the JToken tree
